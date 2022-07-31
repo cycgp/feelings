@@ -17,9 +17,10 @@ export declare class AttendanceInfo {
   readonly name: string;
   readonly phone: string;
   readonly email: string;
+  readonly address?: string | null;
   readonly relationship: number;
-  readonly guestCount: number;
   readonly vegetarion: boolean;
+  readonly guestCount: number;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<AttendanceInfo, AttendanceInfoMetaData>);

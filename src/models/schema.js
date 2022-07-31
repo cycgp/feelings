@@ -31,15 +31,15 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "relationship": {
-                    "name": "relationship",
+                "address": {
+                    "name": "address",
                     "isArray": false,
-                    "type": "Int",
-                    "isRequired": true,
+                    "type": "String",
+                    "isRequired": false,
                     "attributes": []
                 },
-                "guestCount": {
-                    "name": "guestCount",
+                "relationship": {
+                    "name": "relationship",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": true,
@@ -49,6 +49,13 @@ export const schema = {
                     "name": "vegetarion",
                     "isArray": false,
                     "type": "Boolean",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "guestCount": {
+                    "name": "guestCount",
+                    "isArray": false,
+                    "type": "Int",
                     "isRequired": true,
                     "attributes": []
                 },
@@ -170,5 +177,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "b5d600d02006b168619d827f00f7611d"
+    "version": "53a64b39f5a79fb073bafab29db42d91"
 };

@@ -32,7 +32,7 @@ const StorySection = (props) => {
     },
     {
       Id: '3',
-      tabItem: 'Marige Proposal',
+      tabItem: 'Mariage Proposal',
     },
     {
       Id: '4',
@@ -66,7 +66,7 @@ const StorySection = (props) => {
       sImg: sImg3,
       sIcon: sIcon3,
       Shape: Shape,
-      sTitle: 'Marige Proposal',
+      sTitle: 'Mariage Proposal',
       date: '2022 Jan',
       description:
         '敬原勇敢牽起了孟婕的手，決心一同承擔彼此的未來。不論生老病死，無論順境逆境，都要互相包容，彼此扶持。我們決定一起攜手走向未來，邁向人生的新階段。',
@@ -77,7 +77,7 @@ const StorySection = (props) => {
       sIcon: sIcon4,
       Shape: Shape,
       sTitle: 'We Are Married',
-      date: '2022.05.02',
+      date: '2022.05.20',
       description:
         '我們結婚啦！我們從兩個人變成了一個家。我們將一同品嚐生活著酸甜苦辣，繼續創造屬於我們的未來，成為彼此生命中不可或缺的伴侶，完整彼此的人生。',
     },

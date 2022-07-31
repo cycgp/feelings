@@ -73,7 +73,6 @@ class RSVP extends Component {
       error.meal === '' &&
       error.guest === ''
     ) {
-      console.log(service);
       DataStore.save(
         new AttendanceInfo({
           name: name,
