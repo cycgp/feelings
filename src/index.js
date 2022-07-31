@@ -10,10 +10,11 @@ import './sass/style.scss';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './store/index';
 import { Provider } from 'react-redux';
-import { Amplify } from 'aws-amplify';
+import { Amplify, Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
 
 Amplify.configure(awsconfig);
+Auth.configure(awsconfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

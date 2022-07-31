@@ -1,4 +1,17 @@
 {
+  "master": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hnmwedding-master-124019-authRole",
+      "UnauthRoleArn": "arn:aws:iam::752802557011:role/amplify-hnmwedding-master-124019-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::752802557011:role/amplify-hnmwedding-master-124019-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-hnmwedding-master-124019-deployment",
+      "UnauthRoleName": "amplify-hnmwedding-master-124019-unauthRole",
+      "StackName": "amplify-hnmwedding-master-124019",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:752802557011:stack/amplify-hnmwedding-master-124019/f03504e0-10cd-11ed-a9d2-0a1f3ccfa533",
+      "AmplifyAppId": "d3dynpiiw49h39"
+    }
+  },
   "staging": {
     "awscloudformation": {
       "AuthRoleName": "amplify-hnmwedding-staging-115403-authRole",

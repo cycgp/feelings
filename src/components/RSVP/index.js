@@ -12,9 +12,9 @@ class RSVP extends Component {
     phone: '',
     email: '',
     address: '',
-    meal: '',
-    service: '',
-    guest: '',
+    meal: null,
+    service: 0,
+    guest: 0,
     error: {},
   };
 
@@ -31,8 +31,11 @@ class RSVP extends Component {
   subimtHandler = (e) => {
     e.preventDefault();
 
-    const { name, phone, email, address, service, meal, guest, error } =
-      this.state;
+    const { name, phone, email, address, error } = this.state;
+
+    var service = Number(this.state.service);
+    var guest = Number(this.state.guest);
+    var meal = this.state.meal;
 
     if (name === '') {
       error.name = 'Please enter your name';
@@ -40,20 +43,22 @@ class RSVP extends Component {
     if (phone === '') {
       error.phone = 'Please enter your phone';
     } else if (!phone.match(/^09\d{8}$/)) {
-      error.phone = 'Please enter a valid phone number';
+      error.phone = 'Please enter a valid phone number (e.g. 0987654321)';
     }
     if (email === '') {
       error.email = 'Please enter your email';
     }
-    if (service === '') {
+    if (service === 0) {
       error.service = 'Please select your relationship';
     }
-    if (guest === '') {
+    if (guest === 0) {
       error.guest = 'Please select your number of guest';
     }
-    if (meal === '') {
+    if (meal === null) {
       error.meal = 'Please select your meal preference';
     }
+
+    meal = this.state.meal === 'true' ? true : false;
 
     if (error) {
       this.setState({
@@ -68,6 +73,7 @@ class RSVP extends Component {
       error.meal === '' &&
       error.guest === ''
     ) {
+      console.log(service);
       DataStore.save(
         new AttendanceInfo({
           name: name,
@@ -82,10 +88,12 @@ class RSVP extends Component {
 
       this.setState({
         name: '',
+        phone: '',
         email: '',
         address: '',
-        meal: '',
-        guest: '',
+        meal: null,
+        service: 0,
+        guest: 0,
         error: {},
       });
     }
@@ -162,9 +170,9 @@ class RSVP extends Component {
                       value={service}
                       onChange={this.changeHandler}
                     >
-                      <option>Releatives and Friends of</option>
-                      <option value={0}>孟婕 Morrie 的親友</option>
-                      <option value={1}>敬原 Henry 的親友</option>
+                      <option value={0}>Releatives and Friends of</option>
+                      <option value={1}>孟婕 Morrie 的親友</option>
+                      <option value={2}>敬原 Henry 的親友</option>
                     </select>
                     <p>{error.service ? error.service : ''}</p>
                   </div>
@@ -175,7 +183,7 @@ class RSVP extends Component {
                       value={guest}
                       onChange={this.changeHandler}
                     >
-                      <option>Number of Guests</option>
+                      <option value={0}>Number of Guests</option>
                       <option value={1}>1</option>
                       <option value={2}>2</option>
                       <option value={3}>3</option>
@@ -192,7 +200,7 @@ class RSVP extends Component {
                       value={meal}
                       onChange={this.changeHandler}
                     >
-                      <option>Meal Preferences</option>
+                      <option value={null}>Meal Preferences</option>
                       <option value={false}>葷食 Normal</option>
                       <option value={true}>素食 Vegetarian</option>
                     </select>
