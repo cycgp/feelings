@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hnmwedding-staging-115403-authRole",
+      "UnauthRoleArn": "arn:aws:iam::752802557011:role/amplify-hnmwedding-staging-115403-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::752802557011:role/amplify-hnmwedding-staging-115403-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-hnmwedding-staging-115403-deployment",
+      "UnauthRoleName": "amplify-hnmwedding-staging-115403-unauthRole",
+      "StackName": "amplify-hnmwedding-staging-115403",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:752802557011:stack/amplify-hnmwedding-staging-115403/794d7890-10c7-11ed-ac8f-0ab089a3df85",
+      "AmplifyAppId": "d3dynpiiw49h39"
+    }
+  }
+}
