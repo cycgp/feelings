@@ -35,7 +35,7 @@ const Footer = (props) => {
                 <p>與我們一起慶祝狂歡，</p>
                 <p>讓這個充滿意義的日子更加圓滿幸福 ❤❤❤</p>
                 <p>10.08 期待您的到來</p>
-                <p style={{ paddingTop: '30px' }}>敬原 Henry & 孟婕 Morrie</p>
+                <p style={{ paddingTop: '35px' }}>敬原 Henry & 孟婕 Morrie</p>
               </div>
             </div>
           </div>

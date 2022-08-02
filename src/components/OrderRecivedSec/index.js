@@ -7,21 +7,38 @@ import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import { totalPrice } from '../../utils';
 import './style.scss';
-import { AttendanceInfo } from '../../models';
+import { AttendanceInfo, Message } from '../../models';
 import useQuery from '../../main-component/useQuery';
 import { DataStore } from '@aws-amplify/datastore';
 
 const OrderRecivedSec = ({ cartList }) => {
-  const [attendenceOrder, setAttendenceOrder] = useState({
-    AttendanceInfo,
-  });
+  const [attendenceOrder, setAttendenceOrder] = useState({});
+  const [messageOrder, setMessageOrder] = useState({});
   const query = useQuery();
   useEffect(() => {
     const type = query.value.type;
     const id = query.value.id;
     if (type === 'attendance') {
       DataStore.query(AttendanceInfo, id).then((res) => {
-        setAttendenceOrder(res);
+        setAttendenceOrder({
+          Name: res.name,
+          Phone: res.phone,
+          Email: res.email,
+          Address: res.address,
+          Relationship:
+            res.relationship === 1 ? '孟婕 Morrie 的親友' : '敬原 Henry 的親友',
+          Guest: res.guestCount,
+          'Meal Preference':
+            res.vegetarion === false ? '葷食 Normal' : '素食 Vegetarian',
+        });
+      });
+    } else if (type === 'message') {
+      DataStore.query(Message, id).then((res) => {
+        setMessageOrder({
+          Name: res.name,
+          Email: res.email,
+          Message: res.content,
+        });
       });
     }
   });
@@ -32,7 +49,8 @@ const OrderRecivedSec = ({ cartList }) => {
         <div className="row">
           <div className="order-top">
             <h2>
-              Thank You For Your Order! <span>your order has been recived</span>
+              Thank You For Your Reply!{' '}
+              <span>The form you submit has been recived</span>
             </h2>
             <Link to="/" className="theme-btn">
               Back Home
@@ -42,36 +60,28 @@ const OrderRecivedSec = ({ cartList }) => {
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <Grid className="cartTotals">
-                  <h4>Order details</h4>
+                  <h4>Submitted Form Details</h4>
                   <Table>
                     <TableBody>
-                      {cartList.map((item) => (
-                        <TableRow key={item.id}>
-                          <TableCell>
-                            <img src={item.proImg} alt="" /> {item.title} $
-                            {item.price} x {item.qty}
-                          </TableCell>
+                      {Object.keys(messageOrder).map((key, index) => (
+                        <TableRow key={index}>
+                          <TableCell>{key}</TableCell>
                           <TableCell align="right">
-                            ${item.qty * item.price}
+                            {messageOrder[key]}
                           </TableCell>
                         </TableRow>
                       ))}
-                      <TableRow className="totalProduct">
-                        <TableCell>Total product</TableCell>
-                        <TableCell align="right">{cartList.length}</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>Sub Price</TableCell>
-                        <TableCell align="right">
-                          ${totalPrice(cartList)}
-                        </TableCell>
-                      </TableRow>
+                      {Object.keys(attendenceOrder).map((key, index) => (
+                        <TableRow key={index}>
+                          <TableCell>{key}</TableCell>
+                          <TableCell align="right">
+                            {attendenceOrder[key]}
+                          </TableCell>
+                        </TableRow>
+                      ))}
                       <TableRow>
                         <TableCell>
-                          <b>Total Price</b>
-                        </TableCell>
-                        <TableCell align="right">
-                          <b>${totalPrice(cartList)}</b>
+                          <b>Looking forward to meet you at the wedding ❤❤❤</b>
                         </TableCell>
                       </TableRow>
                     </TableBody>
