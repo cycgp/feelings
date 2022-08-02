@@ -8,14 +8,35 @@ import vec2 from '../../images/contact/2.png';
 
 class RSVP extends Component {
   state = {
-    name: '',
-    phone: '',
-    email: '',
-    address: '',
-    meal: null,
-    service: 0,
-    guest: 0,
-    error: {},
+    name: 'test',
+    phone: '0987654321',
+    email: 'test@test.com',
+    address: 'test address',
+    meal: 'true',
+    service: 1,
+    guest: 1,
+    error: {
+      address: '',
+      email: '',
+      guest: '',
+      meal: '',
+      name: '',
+      phone: '',
+      service: '',
+    },
+  };
+  // state = {
+  //   name: '',
+  //   phone: '',
+  //   email: '',
+  //   address: '',
+  //   meal: '',
+  //   service: 0,
+  //   guest: 0,
+  //   error: {},
+  // };
+  goToOrder = (id) => {
+    window.location = '/order-received?type=attendance&id=' + id;
   };
 
   changeHandler = (e) => {
@@ -28,7 +49,7 @@ class RSVP extends Component {
     });
   };
 
-  subimtHandler = (e) => {
+  subimtHandler = async (e) => {
     e.preventDefault();
 
     const { name, phone, email, address, error } = this.state;
@@ -54,17 +75,17 @@ class RSVP extends Component {
     if (guest === 0) {
       error.guest = 'Please select your number of guest';
     }
-    if (meal === null) {
+    if (meal === '') {
       error.meal = 'Please select your meal preference';
     }
-
-    meal = this.state.meal === 'true' ? true : false;
+    console.log(error);
 
     if (error) {
       this.setState({
         error,
       });
     }
+    meal = this.state.meal === 'true' ? true : false;
     if (
       error.name === '' &&
       error.phone === '' &&
@@ -73,7 +94,7 @@ class RSVP extends Component {
       error.meal === '' &&
       error.guest === ''
     ) {
-      DataStore.save(
+      await DataStore.save(
         new AttendanceInfo({
           name: name,
           phone: phone,
@@ -83,14 +104,18 @@ class RSVP extends Component {
           guestCount: guest,
           vegetarion: meal,
         }),
-      );
+      ).then((res) => {
+        if (res.id !== null) {
+          this.goToOrder(res.id);
+        }
+      });
 
       this.setState({
         name: '',
         phone: '',
         email: '',
         address: '',
-        meal: null,
+        meal: '',
         service: 0,
         guest: 0,
         error: {},
@@ -199,7 +224,7 @@ class RSVP extends Component {
                       value={meal}
                       onChange={this.changeHandler}
                     >
-                      <option value={null}>Meal Preferences</option>
+                      <option value={''}>Meal Preferences</option>
                       <option value={false}>葷食 Normal</option>
                       <option value={true}>素食 Vegetarian</option>
                     </select>

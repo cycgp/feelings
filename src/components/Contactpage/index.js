@@ -9,10 +9,7 @@ const Contactpage = () => {
           <div className="col col-lg-10 offset-lg-1">
             <div className="wpo-contact-title">
               <h2>Have Any Question?</h2>
-              <p>
-                It is a long established fact that a reader will be distracted
-                content of a page when looking.
-              </p>
+              <p>Come and leave some message to let us know what you think.</p>
             </div>
             <div className="wpo-contact-form-area">
               <ContactForm />

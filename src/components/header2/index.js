@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MobileMenu from '../MobileMenu';
+import MobileMenu2 from '../MobileMenu2';
 import { removeFromCart } from '../../store/actions/action';
-import { Link } from 'react-scroll';
 import { NavLink } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import HeaderTopbar from '../HeaderTopbar';
 
 class Header extends Component {
@@ -21,7 +21,7 @@ class Header extends Component {
               <div className="row align-items-center">
                 <div className="col-lg-3 col-md-3 col-3 d-lg-none dl-block">
                   <div className="mobail-menu">
-                    <MobileMenu />
+                    <MobileMenu2 />
                   </div>
                 </div>
                 <div className="col-lg-3 col-md-6 col-6">
@@ -29,7 +29,7 @@ class Header extends Component {
                     <NavLink
                       onClick={ClickHandler}
                       className="navbar-brand logo"
-                      to="/home"
+                      to="/"
                     >
                       Wedd
                       <span>
@@ -49,72 +49,22 @@ class Header extends Component {
                     </button>
                     <ul className="nav navbar-nav mb-2 mb-lg-0">
                       <li>
-                        <Link
-                          activeClass="active"
-                          to="home"
-                          spy={true}
-                          smooth={true}
-                          duration={500}
-                        >
-                          Home
-                        </Link>
+                        <Link to={{ pathname: '/' }}>Home</Link>
                       </li>
                       <li>
-                        <Link
-                          activeClass="active"
-                          to="couple"
-                          spy={true}
-                          smooth={true}
-                          offset={-100}
-                          duration={500}
-                        >
-                          Couple
-                        </Link>
+                        <Link to={{ pathname: '/#couple' }}>Couple</Link>
                       </li>
                       <li>
-                        <Link
-                          activeClass="active"
-                          to="story"
-                          spy={true}
-                          smooth={true}
-                          duration={500}
-                        >
-                          Story
-                        </Link>
+                        <Link to={{ pathname: '/#story' }}>Story</Link>
                       </li>
                       <li>
-                        <Link
-                          activeClass="active"
-                          to="gallery"
-                          spy={true}
-                          smooth={true}
-                          duration={500}
-                        >
-                          Gallery
-                        </Link>
+                        <Link to={{ pathname: '/#gallery' }}>Gallery</Link>
                       </li>
                       <li>
-                        <Link
-                          activeClass="active"
-                          to="events"
-                          spy={true}
-                          smooth={true}
-                          offset={-80}
-                          duration={500}
-                        >
-                          Events
-                        </Link>
+                        <Link to={{ pathname: '/#events' }}>Events</Link>
                       </li>
                       <li>
-                        <Link
-                          activeClass="active"
-                          to="RSVP"
-                          spy={true}
-                          smooth={true}
-                          duration={500}
-                        >
-                          RSVP
-                        </Link>
+                        <Link to={{ pathname: '/#RSVP' }}>RSVP</Link>
                       </li>
                       <li>
                         <NavLink onClick={ClickHandler} to="/contact">

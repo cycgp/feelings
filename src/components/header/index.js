@@ -29,7 +29,7 @@ class Header extends Component {
                     <NavLink
                       onClick={ClickHandler}
                       className="navbar-brand logo"
-                      to="/home"
+                      to="/"
                     >
                       Wedd
                       <span>
@@ -78,6 +78,7 @@ class Header extends Component {
                           spy={true}
                           smooth={true}
                           duration={500}
+                          offset={-60}
                         >
                           Story
                         </Link>
@@ -99,8 +100,8 @@ class Header extends Component {
                           to="events"
                           spy={true}
                           smooth={true}
-                          offset={-80}
                           duration={500}
+                          offset={50}
                         >
                           Events
                         </Link>
