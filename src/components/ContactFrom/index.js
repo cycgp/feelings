@@ -45,25 +45,28 @@ class ContactForm extends Component {
       });
     }
     if (error.name === '' && error.email === '' && error.notes === '') {
-      await DataStore.save(
-        new Message({
-          name: name,
-          email: email,
-          content: notes,
-        }),
-      );
       // await DataStore.save(
       //   new Message({
       //     name: name,
       //     email: email,
       //     content: notes,
       //   }),
-      // ).then((res) => {
-      //   if (res.id !== null) {
-      //     console.log(res);
-      //     this.goToOrder(res.id);
-      //   }
-      // });
+      // );
+      await DataStore.save(
+        new Message({
+          name: name,
+          email: email,
+          content: notes,
+        }),
+      ).then((res) => {
+        if (res.id !== null) {
+          console.log(res);
+          this.setState({
+            id: res.id,
+          });
+          // this.goToOrder(res.id);
+        }
+      });
 
       this.setState({
         name: '',
