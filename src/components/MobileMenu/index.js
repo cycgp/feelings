@@ -91,17 +91,6 @@ export default class MobileMenu extends Component {
             <li>
               <Link
                 activeClass="active"
-                to="RSVP"
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
-                RSVP
-              </Link>
-            </li>
-            <li>
-              <Link
-                activeClass="active"
                 to="events"
                 spy={true}
                 smooth={true}
@@ -109,6 +98,17 @@ export default class MobileMenu extends Component {
                 duration={500}
               >
                 Events
+              </Link>
+            </li>
+            <li>
+              <Link
+                activeClass="active"
+                to="RSVP"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                RSVP
               </Link>
             </li>
             <li>
