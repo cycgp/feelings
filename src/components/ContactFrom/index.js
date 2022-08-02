@@ -53,6 +53,7 @@ class ContactForm extends Component {
         }),
       ).then((res) => {
         if (res.id !== null) {
+          console.log(res);
           this.goToOrder(res.id);
         }
       });
