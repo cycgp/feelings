@@ -51,12 +51,7 @@ class ContactForm extends Component {
           email: email,
           content: notes,
         }),
-      ).then((res) => {
-        if (res.id !== null) {
-          console.log(res);
-          this.goToOrder(res.id);
-        }
-      });
+      );
       // await DataStore.save(
       //   new Message({
       //     name: name,
