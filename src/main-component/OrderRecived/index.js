@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import OrderRecivedSec from '../../components/OrderRecivedSec';
 import { useSearchParams } from 'react-router-dom';
 
-const OrderRecived = ({ cartList }) => {
+const OrderRecived = ({}) => {
   return (
     <Fragment>
-      <OrderRecivedSec cartList={cartList} />
+      <OrderRecivedSec />
     </Fragment>
   );
 };

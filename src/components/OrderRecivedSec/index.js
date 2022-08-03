@@ -5,7 +5,6 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
-import { totalPrice } from '../../utils';
 import './style.scss';
 import { AttendanceInfo, Message } from '../../models';
 import useQuery from '../../main-component/useQuery';
