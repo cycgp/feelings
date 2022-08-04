@@ -80,7 +80,10 @@ const OrderRecivedSec = ({ cartList }) => {
                       ))}
                       <TableRow>
                         <TableCell>
-                          <b>Looking forward to meet you at the wedding ❤❤❤</b>
+                          <b>
+                            Check your mailbox for the confirmation email.
+                            Looking forward to meet you at the wedding ❤❤❤
+                          </b>
                         </TableCell>
                       </TableRow>
                     </TableBody>

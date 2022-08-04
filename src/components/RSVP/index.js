@@ -2,39 +2,41 @@ import React, { Component } from 'react';
 import SectionTitle from '../../components/SectionTitle';
 import { DataStore } from '@aws-amplify/datastore';
 import { AttendanceInfo } from '../../models';
+import Auth from '@aws-amplify/auth';
+import Lambda from 'aws-sdk/clients/lambda'; // npm install aws-sdk
 
 import vec1 from '../../images/contact/1.png';
 import vec2 from '../../images/contact/2.png';
 
 class RSVP extends Component {
-  // state = {
-  //   name: 'test',
-  //   phone: '0987654321',
-  //   email: 'test@test.com',
-  //   address: 'test address',
-  //   meal: 'true',
-  //   service: 1,
-  //   guest: 1,
-  //   error: {
-  //     address: '',
-  //     email: '',
-  //     guest: '',
-  //     meal: '',
-  //     name: '',
-  //     phone: '',
-  //     service: '',
-  //   },
-  // };
   state = {
-    name: '',
-    phone: '',
-    email: '',
-    address: '',
-    meal: '',
-    service: 0,
-    guest: 0,
-    error: {},
+    name: 'test',
+    phone: '0987654321',
+    email: 'test@test.com',
+    address: 'test address',
+    meal: 'true',
+    service: 1,
+    guest: 1,
+    error: {
+      address: '',
+      email: '',
+      guest: '',
+      meal: '',
+      name: '',
+      phone: '',
+      service: '',
+    },
   };
+  // state = {
+  //   name: '',
+  //   phone: '',
+  //   email: '',
+  //   address: '',
+  //   meal: '',
+  //   service: 0,
+  //   guest: 0,
+  //   error: {},
+  // };
 
   goToOrder = (id) => {
     window.location = '/order-received?type=attendance&id=' + id;
@@ -79,7 +81,6 @@ class RSVP extends Component {
     if (meal === '') {
       error.meal = 'Please select your meal preference';
     }
-    console.log(error);
 
     if (error) {
       this.setState({

@@ -10,6 +10,18 @@
       "StackName": "amplify-hnmwedding-master-124019",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:752802557011:stack/amplify-hnmwedding-master-124019/f03504e0-10cd-11ed-a9d2-0a1f3ccfa533",
       "AmplifyAppId": "d3dynpiiw49h39"
+    },
+    "categories": {
+      "function": {
+        "hnmweddinge6af8931": {
+          "deploymentBucketName": "amplify-hnmwedding-master-124019-deployment",
+          "s3Key": "amplify-builds/hnmweddinge6af8931-55326e76516d67794678-build.zip"
+        },
+        "hnmweddinga35c1728": {
+          "deploymentBucketName": "amplify-hnmwedding-master-124019-deployment",
+          "s3Key": "amplify-builds/hnmweddinga35c1728-4c485456517a2f647a62-build.zip"
+        }
+      }
     }
   },
   "staging": {

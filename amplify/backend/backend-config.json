@@ -21,5 +21,19 @@
         }
       }
     }
+  },
+  "function": {
+    "hnmweddinge6af8931": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": []
+    },
+    "hnmweddinga35c1728": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": []
+    }
   }
 }
