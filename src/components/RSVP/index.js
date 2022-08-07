@@ -182,7 +182,7 @@ class RSVP extends Component {
                         type="text"
                         className="form-control"
                         name="address"
-                        placeholder="Address (required for invitation card)"
+                        placeholder="Address (for invitation card)"
                       />
                       <p>{error.address ? error.address : ''}</p>
                     </div>
