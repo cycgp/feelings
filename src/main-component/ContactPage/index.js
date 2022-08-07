@@ -5,7 +5,6 @@ import Contactpage from '../../components/Contactpage';
 import Footer from '../../components/footer';
 import Scrollbar from '../../components/scrollbar';
 import { animateScroll } from 'react-scroll';
-import { a } from 'aws-amplify';
 
 const ContactPage = () => {
   useEffect(() => {
