@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import SectionTitle from '../../components/SectionTitle';
 import { DataStore } from '@aws-amplify/datastore';
 import { AttendanceInfo } from '../../models';
-import Auth from '@aws-amplify/auth';
-import Lambda from 'aws-sdk/clients/lambda'; // npm install aws-sdk
 
 import vec1 from '../../images/contact/1.png';
 import vec2 from '../../images/contact/2.png';
