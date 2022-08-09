@@ -32,7 +32,7 @@ const StorySection = (props) => {
     },
     {
       Id: '3',
-      tabItem: 'Mariage Proposal',
+      tabItem: 'Marriage Proposal',
     },
     {
       Id: '4',
@@ -66,7 +66,7 @@ const StorySection = (props) => {
       sImg: sImg3,
       sIcon: sIcon3,
       Shape: Shape,
-      sTitle: 'Mariage Proposal',
+      sTitle: 'Marriage Proposal',
       date: '2022 Jan',
       description:
         '敬原勇敢牽起了孟婕的手，決心一同承擔彼此的未來。不論生老病死，無論順境逆境，都要互相包容，彼此扶持。我們決定一起攜手走向未來，邁向人生的新階段。',
