@@ -49,7 +49,7 @@ const OrderRecivedSec = ({ cartList }) => {
           <div className="order-top">
             <h2>
               Thank You For Your Reply!{' '}
-              <span>The form you submit has been recived</span>
+              <span>The form you submitted has been received</span>
             </h2>
             <Link to="/" className="theme-btn">
               Back Home
@@ -82,7 +82,7 @@ const OrderRecivedSec = ({ cartList }) => {
                         <TableCell>
                           <b>
                             Check your mailbox for the confirmation email.
-                            Looking forward to meet you at the wedding ❤❤❤
+                            Looking forward meeting you at the wedding ❤❤❤
                           </b>
                         </TableCell>
                       </TableRow>
